@@ -43,3 +43,33 @@ a {
 .orange { background: #ee7202; }
 .pink { background: #e61c67; }
 .green { background: #96c11f; }
+
+.desc1 {
+    display:none;
+    position:absolute;
+    left:600px;
+    top:200px;
+    border:1px solid #000;
+    width:300px;
+    height:150px;
+    background: #fff;
+    opacity:2;
+    color: #000;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.desc2 {
+    display:none;
+    position:absolute;
+    left:800px;
+    top:200px;
+    border:1px solid #000;
+    width:300px;
+    height:150px;
+    background: #fff;
+    opacity:2;
+    color: #000;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
