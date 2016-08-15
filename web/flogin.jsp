@@ -12,7 +12,7 @@
         <title>JSP Page</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body style="background: #76b852;">
         <div class="login-page">
             <div class="form">
                 <form class="login-form"  action="facultylogin.jsp">
