@@ -9,13 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Faculty Login</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body style="background: #76b852;">
         <div class="login-page">
             <div class="form">
-                <form class="login-form"  action="facultylogin.jsp">
+                <form class="login-form" action="facultylogin.jsp">
                     <h1 /> FACULTY LOGIN
                     <br /><br />
                     <input type="text" placeholder="Username" name="funame"/>

@@ -88,16 +88,7 @@
 .container .info span .fa {
     color: #EF3B3A;
 }
-body {
-    /*  
-        background: #76b852;
-        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-        background: -moz-linear-gradient(right, #76b852, #8DC26F);
-        background: -o-linear-gradient(right, #76b852, #8DC26F);
-        background: linear-gradient(to left, #76b852, #8DC26F);
-        background-image: url("images/2.jpg"),url("images/1.png"),url("images/3.png"),url("images/4.jpg");
-        background-repeat: no-repeat;
-    */ 
+body { 
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
@@ -111,9 +102,6 @@ body {
     background-size: cover;
     transition: background-image 1s linear;
 }
-
-/* Use additional CSS to control the `height` of `[data-slides]`, like so: */
-
 .test { 
     min-height: 100%;
     min-width: 1024px;
