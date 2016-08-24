@@ -35,28 +35,40 @@
             </span>
         </p>
         <div class="menu">
-            <div class="yel">
-                <a class="yellow" href="#">Reading</a>
-                <div class="desc1">
-                    In this unit we will look at:                    
-                    <li>making your reading more efficient by defining your purpose for reading.</li>
-                    <li>finding information quickly by scanning.</li>
-                    <li>topic sentences and how they can help you understand a text.</li>
-                    <li>identifying the main arguments in a text.</li>
-                    <li>summarising the information you find.</li>                    
-                </div>
-            </div>
-            <div class="gre">
-                <a class="green" href="listen.html">Listening</a>
-                <div class="desc2">Some Text Here</div>
-            </div>
-            <a class="pink" href="#">Module 3</a>
+            <!--            <div class="yel">-->
+            <a class="yellow" href="#">
+                <div class="hide">Reading</div>
+            </a>
+            <!--                <div class="desc1">
+                                In this unit we will look at:                    
+                                <li>making your reading more efficient by defining your purpose for reading.</li>
+                                <li>finding information quickly by scanning.</li>
+                                <li>topic sentences and how they can help you understand a text.</li>
+                                <li>identifying the main arguments in a text.</li>
+                                <li>summarising the information you find.</li>                    
+                            </div>-->
+            <!--            </div>-->
+            <!--            <div class="gre">-->
+            <a class="green" href="listen.html">
+                <div class="hide">Listening</div>
+            </a>
+            <!--                <div class="desc2">Some Text Here</div>-->
+            <!--            </div>-->
+            <a class="pink" href="#">
+                <div class="hide">Module 3</div>
+            </a>
             <!--                <div class="desc3">Some Text Here</div>-->
-            <a class="purple" href="#">Module 4</a>
+            <a class="purple" href="#">
+                <div class="hide">Module 4</div>
+            </a>
             <!--                <div class="desc4">Some Text Here</div>-->
-            <a class="blue" href="#">Module 5</a>
+            <a class="blue" href="#">
+                <div class="hide">Module 5</div>
+            </a>
             <!--                <div class="desc5">Some Text Here</div>-->
-            <a class="orange" href="#">Module 6</a>
+            <a class="orange" href="#">
+                <div class="hide">Module 6</div>
+            </a>
             <!--                <div class="desc6">Some Text Here</div>-->
         </div>
         <script src="js/mainmenu.js"></script>
