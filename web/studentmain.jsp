@@ -36,7 +36,7 @@
         </p>
         <div class="menu">
             <!--            <div class="yel">-->
-            <a class="yellow" href="#">
+            <a class="yellow" href="reading.jsp">
                 <div class="hide">Reading</div>
             </a>
             <!--                <div class="desc1">
