@@ -1,8 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 15 Aug, 2016, 2:15:08 PM
     Author     : Gurjot
@@ -22,14 +17,14 @@ body {
     font-size: 20pt;
 }
 a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
-
 .menu {
     width: 1300px;
     margin: 30px auto;
     margin-left: 240px;
+    background: white;
 }
 .menu a {
     width: 350px;
@@ -39,8 +34,15 @@ a {
     text-align: center;
     float: left;
     opacity: 0.3;
+    background: white;
 }
-
+.block { 
+    //background: #96c11f;
+    background: white;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
 /*.yellow:hover{
     width: 380px;
     line-height: 320px;
@@ -71,10 +73,10 @@ a {
     width: 380px;
     line-height: 320px;
     margin: 0px;
-}*/
-/*a:hover .hide{
+}
+a:hover .hide{
     visibility: hidden;
-}*/
+}
 .yellow { 
     //background: #fdd22a;
     background: #fff;
@@ -117,8 +119,7 @@ a {
     border: 1px solid #dddddd;
     box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
 }
-
-/*.desc1 {
+.desc1 {
     display:none;
     position:absolute;
     left:250px;
@@ -132,7 +133,6 @@ a {
     font-size: 15px;
     font-family: Arial, sans-serif;
 }
-
 .desc2 {
     display:none;
     position:absolute;
