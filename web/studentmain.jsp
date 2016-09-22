@@ -13,6 +13,7 @@
     </head>
     <body>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+        <script src="js/mainmenu.js"></script>
         <%
             response.addHeader("Cache-Control", "no-cache,no-store,private,must-revalidate,max-stale=0,post-check=0,pre-check=0");
             response.addHeader("Pragma", "no-cache");
@@ -64,8 +65,7 @@
                 <div class="hide">Module 6</div>
             </a>
             <!--<div class="desc6">Some Text Here</div>-->
-        </div>
-        <script src="js/mainmenu.js"></script>
+        </div>        
         <!--<script src="js/desc.js"></script>-->
     </body>
 </html>
