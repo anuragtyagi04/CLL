@@ -7,23 +7,26 @@
         </title>
     </head>
     <body>
-        <audio controls> 
-            <source src="A new ice age full.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <p class="desc"> On the basis of the audio clip below, answer the questions that follow:</p>
-        <div>
-            <form >
-                <p class="question1"> Question1 </p>
-<!--                <label for="fname">Answer   </label>-->
-                <input type="text" id="fname" name="fname">
-                <input type="submit" value="Submit">
-                <p class="question2"> Question2 </p>
-<!--                <label for="fname">Answer   </label>-->
-                <input type="text" id="fname" name="fname">
-                <input type="submit" value="Submit">
-                <p class="right"><a href="studentmain.jsp">Done</a></p>
-            </form>
+        <div class="whole">
+            
+            <div class="passage"> On the basis of the audio clip below, answer the questions that follow:</div><br>
+            <audio controls> 
+                <source src="A new ice age full.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div>
+                <form class="opt">
+                    <p class="question"> Question1 </p>
+                    <!--                <label for="fname">Answer   </label>-->
+                    <input type="text" id="fname" name="fname">
+<!--                    <input type="submit" value="Submit">-->
+                    <p class="question"> Question2 </p>
+                    <!--                <label for="fname">Answer   </label>-->
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <p class="left"><input type="submit" value="Submit"></p>
+<!--                    <p class="right"><a href="studentmain.jsp">Done</a></p>-->
+                </form>
+            </div>
         </div>
     </body>
 </html>

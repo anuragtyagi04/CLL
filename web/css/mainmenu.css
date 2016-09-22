@@ -13,8 +13,10 @@ and open the template in the editor.
     padding: 0;
 }
 body {
-    background: #111;
-    color: #fff;
+    //background: #111;
+    background: #ccffcc;
+    //color: #fff;
+    color: #000;
     font-family: 'Open sans', sans-serif;
     font-weight: 300;
     font-size: 20pt;
@@ -39,11 +41,11 @@ a {
     opacity: 0.3;
 }
 
-.yellow:hover{
+/*.yellow:hover{
     width: 380px;
     line-height: 320px;
     margin: 0px;
-/*    background-image: url(pics/reading.png);*/
+//    background-image: url(pics/reading.png);
 }
 .blue:hover{
     width: 380px;
@@ -69,16 +71,52 @@ a {
     width: 380px;
     line-height: 320px;
     margin: 0px;
-}
+}*/
 /*a:hover .hide{
     visibility: hidden;
 }*/
-.yellow { background: #fdd22a; }
-.blue { background: #009fe3; }
-.purple { background: #574696; }
-.orange { background: #ee7202; }
-.pink { background: #e61c67; }
-.green { background: #96c11f; }
+.yellow { 
+    //background: #fdd22a;
+    background: #fff;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
+.blue { 
+    //background: #009fe3;
+    background: #fff;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
+.purple { 
+    //background: #574696;
+    background: #fff;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
+.orange { 
+    //background: #ee7202;
+    background: #fff;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
+.pink { 
+    //background: #e61c67;
+    background: #fff;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
+.green { 
+    //background: #96c11f;
+    background: #fff;
+    color: #000;
+    border: 1px solid #dddddd;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+}
 
 /*.desc1 {
     display:none;

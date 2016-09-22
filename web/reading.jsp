@@ -90,7 +90,7 @@
                 <input class='opt' type="radio" name="radio" id="radio11"><label for="radio11"><span></span><%= ans33%></label><br>
                 <input class='opt' type="radio" name="radio" id="radio12"><label for="radio12"><span></span><%= ans34%></label>
             </form><br>
-            <button id="NextBtn" name="Next">Next</button>
+            <input type="submit" id="NextBtn">
             <script>
                 document.getElementById("NextBtn").addEventListener("click", myFunction);
                 function myFunction() {
