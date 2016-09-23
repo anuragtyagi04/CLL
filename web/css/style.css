@@ -95,12 +95,13 @@ body {
 }
 
 [data-slides] {
-    background-image: url("images/2.jpg"); /* Default image. */
+    background-image: url("images/image (4).JPG"); /* Default image. */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
     background-size: cover;
     transition: background-image 1s linear;
+    transition-delay: 0s;
 }
 .test { 
     min-height: 100%;

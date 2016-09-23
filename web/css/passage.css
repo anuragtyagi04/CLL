@@ -89,3 +89,7 @@ input[type=submit]:hover {
 /*    background-color: #45a049;*/
     background-color: #66ff66
 }
+body{
+    background-image:url("images/image (14).JPG");
+    background-size: 1600px 900px;
+}

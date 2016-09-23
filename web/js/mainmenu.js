@@ -9,7 +9,7 @@ $(document).ready(function () {
         }, 200);
     }, function () {
         $(this).stop().animate({
-            opacity:0.8
+            opacity:0.5
         }, 200);
     });
 });

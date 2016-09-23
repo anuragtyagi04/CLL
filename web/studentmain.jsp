@@ -31,8 +31,8 @@
         %>
         <div class="menu">
             <!--<div class="yel">-->
-            <a class="block" href="reading.jsp">
-                <div class="hide">Reading</div>
+            <a class="block" href="reading.jsp">Reading
+                <div class="hide"></div>
             </a>
             <!--<div class="desc1">
             In this unit we will look at:
