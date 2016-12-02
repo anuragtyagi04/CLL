@@ -20,7 +20,13 @@
     </head>
     <body>
         <%
-            int k = 1;
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+            }%>
+            <%! int k=1; %>
+            <%//Integer a = (Integer)session.getAttribute("count");
+            //int k = a.intValue();
+            System.out.println(k);
             int j = 1;
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cll", "root", "root");
@@ -96,6 +102,9 @@
                 function myFunction() {
                     <%
                         k++;
+                        System.out.println(k);
+                        System.out.println(result);
+                        session.setAttribute("count", k);
                         System.out.println(k);
                     %>
                     window.location.reload();

@@ -17,6 +17,7 @@
         <%
             String s1 = request.getParameter("uname");
             String s2 = request.getParameter("pass");
+            int k=0;
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cll", "root", "root");
@@ -25,11 +26,15 @@
             if (rs.next()) {
                 //request.getRequestDispatcher("/studentmain.jsp").forward(request,response);
                 session.setAttribute("sid", s1);
+                //session.setAttribute("count",k);
                 response.sendRedirect("studentmain.jsp");
             } else {
         %>
     <center><h1><a href="index.jsp">TRY AGAIN</a></h1></center>
                 <%
+                    }
+                    if (session.getAttribute("sid") == null) {
+                        response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
                     }
 
                     con.close();

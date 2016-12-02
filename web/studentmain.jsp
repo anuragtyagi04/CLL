@@ -18,6 +18,10 @@
             response.addHeader("Cache-Control", "no-cache,no-store,private,must-revalidate,max-stale=0,post-check=0,pre-check=0");
             response.addHeader("Pragma", "no-cache");
             response.addDateHeader("Expires", 0);
+            //int k = (int)session.getAttribute("count");
+            //System.out.println(k);  
+            
+
             if ((session.getAttribute("sid") == null) || (session.getAttribute("sid") == "")) {
         %>
         You are not logged in<br/>
@@ -27,6 +31,9 @@
         %>
         <p style="text-align: left;">Welcome <%=session.getAttribute("sid")%><span style="float: right;"><a href='logout.jsp'>Log out</a></span></p>          
         <%
+            }
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
             }
         %>
         <div class="menu">
