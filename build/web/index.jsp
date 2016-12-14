@@ -16,10 +16,13 @@
     <body>
         <div class="test"
              data-slides='[
-             "css/images/2.jpg",
-             "css/images/1.png",
-             "css/images/3.png",
-             "css/images/4.jpg"
+             "css/images/image (4).JPG",
+             "css/images/image (1).JPG",
+             "css/images/image (2).JPG",
+             "css/images/image (3).JPG",
+             "css/images/image (5).JPG",
+             "css/images/image (6).JPG",
+             "css/images/image (7).JPG"             
              ]'>
             <div class="login-page">
                 <div class="form">
