@@ -20,8 +20,9 @@
            Class.forName("com.mysql.jdbc.Driver");
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/cll","root","root");
            Statement st=con.createStatement();
-           st.executeUpdate("insert into student_login_tabl values('"+s1+"','"+s2+"')");
-           out.println("registered");
+           st.executeUpdate("insert into student_login_tabl values('"+s1+"',PASSWORD('"+s2+"'))");
+           st.executeUpdate("insert into marks values ('"+s1+"',0)");
+           response.sendRedirect("index.jsp");
            con.close();
        
        %>

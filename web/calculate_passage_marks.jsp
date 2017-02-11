@@ -32,13 +32,14 @@
             answers.add(ans2);
             answers.add(ans3);
             int k = Integer.parseInt(request.getParameter("passage"));
-
+            
             int marks=0;
             ResultSet rs1 = st.executeQuery("select marks from marks where sid='"+ sid +"'");
             while (rs1.next()) {
+                out.println("hello-test");
                 marks = Integer.parseInt(rs1.getString(1));
             }
-            rs1.close();
+            
             for(int i=1;i<=3;i++){
                 ResultSet rs = st.executeQuery("select ans from questions where q_id="+k+i+"");
                 while (rs.next()) {
@@ -51,6 +52,7 @@
                 }
                 rs.close();
             }
+            rs1.close();
             st.executeUpdate("Update marks set marks = '"+ marks +"' where sid='"+ sid +"' ");            
             response.sendRedirect("reading.jsp?passage="+ ++k +"");
         %>

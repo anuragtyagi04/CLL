@@ -22,7 +22,7 @@
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cll", "root", "root");
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from student_login_tabl where sid='" + s1 + "' and pass='" + s2 + "'");
+            ResultSet rs = st.executeQuery("select * from student_login_tabl where sid='" + s1 + "' and pass=PASSWORD('" + s2 + "')");
             if (rs.next()) {
                 //request.getRequestDispatcher("/studentmain.jsp").forward(request,response);
                 session.setAttribute("sid", s1);
