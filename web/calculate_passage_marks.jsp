@@ -36,7 +36,6 @@
             int marks=0;
             ResultSet rs1 = st.executeQuery("select marks from marks where sid='"+ sid +"'");
             while (rs1.next()) {
-                out.println("hello-test");
                 marks = Integer.parseInt(rs1.getString(1));
             }
             

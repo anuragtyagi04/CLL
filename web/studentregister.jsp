@@ -20,9 +20,15 @@
            Class.forName("com.mysql.jdbc.Driver");
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/cll","root","root");
            Statement st=con.createStatement();
-           st.executeUpdate("insert into student_login_tabl values('"+s1+"',PASSWORD('"+s2+"'))");
-           st.executeUpdate("insert into marks values ('"+s1+"',0)");
-           response.sendRedirect("index.jsp");
+           try{
+            st.executeUpdate("insert into student_login_tabl(sid,pass) values('"+s1+"',PASSWORD('"+s2+"'))");
+           }catch (com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException e){
+               response.sendRedirect("index.jsp?register=failed");
+               return;
+               //throw new Exception("Username already exists");
+           }
+           st.executeUpdate("insert into marks(sid,marks) values ('"+s1+"',0)");
+           response.sendRedirect("index.jsp?register=success");
            con.close();
        
        %>

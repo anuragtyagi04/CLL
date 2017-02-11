@@ -11,9 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css">        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <div class="test"
              data-slides='[
              "css/images/image (4).JPG",
@@ -25,6 +27,21 @@
              "css/images/image (7).JPG"             
              ]'>
             <div class="login-page">
+                <%
+                    String reg_alert="";
+                    if(request.getParameter("register")!=null){
+                    reg_alert=(String) request.getParameter("register");
+                    if(reg_alert.equals("failed")){
+                %>
+                <div class="alert alert-danger">User registration failed. User name already exists.</div>
+                <%
+                    }else if(reg_alert.equals("success")){
+                %>
+                <div class="alert alert-success">User successfully registered. Please login to continue.</div>
+                <%
+                    }
+                    }
+                %>
                 <div class="form">
                     <form class="register-form"  action="studentregister.jsp">                    
                         <input type="text" placeholder="Username" name="uname"/>
