@@ -10,9 +10,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Main Menu</title>
         <link rel="stylesheet" href="css/mainmenu.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/mainmenu.js"></script>
         <%
             response.addHeader("Cache-Control", "no-cache,no-store,private,must-revalidate,max-stale=0,post-check=0,pre-check=0");
@@ -20,7 +22,6 @@
             response.addDateHeader("Expires", 0);
             //int k = (int)session.getAttribute("count");
             //System.out.println(k);  
-            
 
             if ((session.getAttribute("sid") == null) || (session.getAttribute("sid") == "")) {
         %>
@@ -36,9 +37,11 @@
                 response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
             }
         %>
-        <div class="menu">
+        <div style="font-family:'Hoefler Text',Georgia,'Times New Roman',serif;font-weight: normal;font-size: 1.75em;letter-spacing: .2em;line-height: 1.1em; margin:0px; text-align: center; text-transform: uppercase;">Interactive Language Learning</div>
+        
+        <div class="container menu">
             <!--<div class="yel">-->
-            <a class="block" href="reading.jsp">Reading
+            <a class="block" href="reading.jsp?passage=1">Reading
                 <div class="hide"></div>
             </a>
             <!--<div class="desc1">
@@ -68,8 +71,8 @@
                 <div class="hide">Module 5</div>
             </a>
             <!--<div class="desc5">Some Text Here</div>-->
-            <a class="block" href="#">
-                <div class="hide">Module 6</div>
+            <a class="block" href="mymarks.jsp">
+                <div class="hide">My marks</div>
             </a>
             <!--<div class="desc6">Some Text Here</div>-->
         </div>        

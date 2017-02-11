@@ -9,12 +9,12 @@
 }
 body {
     //background: #111;
-    background: #ccffcc;
+    background: #ccffcc !important;
     //color: #fff;
-    color: #000;
-    font-family: 'Open sans', sans-serif;
-    font-weight: 300;
-    font-size: 20pt;
+    color: #000 !important;
+    //font-family: 'Open sans', sans-serif !important;
+    //font-weight: 300 !important;
+    font-size: 20pt !important;
 }
 a {
     color: #000;

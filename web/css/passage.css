@@ -24,8 +24,8 @@ p.passage{
     box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
 }
 div.whole{
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 15%;
+    margin-right: 15%;
     width: 1070px;
     background-color: #f2f2f2;
     padding: 10px 15px 15px 15px; 
