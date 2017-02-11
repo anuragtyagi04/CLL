@@ -30,7 +30,7 @@
         <%
         } else {
         %>
-        <p style="text-align: left;">Welcome <%=session.getAttribute("sid")%><span style="float: right;"><a href='logout.jsp'>Log out</a></span></p>          
+        <p style="text-align: left;">Welcome <%=session.getAttribute("name")%><span style="float: right;"><a href='logout.jsp'>Log out</a></span></p>          
         <%
             }
             if (session.getAttribute("sid") == null) {

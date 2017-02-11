@@ -24,9 +24,8 @@
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("select * from student_login_tabl where sid='" + s1 + "' and pass=PASSWORD('" + s2 + "')");
             if (rs.next()) {
-                //request.getRequestDispatcher("/studentmain.jsp").forward(request,response);
                 session.setAttribute("sid", s1);
-                //session.setAttribute("count",k);
+                session.setAttribute("name", rs.getString(4));
                 response.sendRedirect("studentmain.jsp");
             } else {
         %>

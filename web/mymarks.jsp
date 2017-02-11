@@ -26,7 +26,7 @@
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cll", "root", "root");
             Statement st = con.createStatement();
             String sid =(String) session.getAttribute("sid");
-
+            String name = (String) session.getAttribute("name");
             int marks=0;
             ResultSet rs1 = st.executeQuery("select marks from marks where sid='"+ sid +"'");
             while (rs1.next()) {
@@ -37,7 +37,7 @@
         <div class="container">
             <br>
             <div class="jumbotron">
-                <h1 class="display-3">Hello, <%=sid%></h1>
+                <h1 class="display-3">Hello, <%=name%></h1>
                 <p class="lead">Your score in this Interactive Language Learning module is given below.</p>
                 <hr class="my-4">
                 <p>You have a total score of <%=marks%>.</p>

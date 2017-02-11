@@ -16,12 +16,14 @@
        <%
        String s1=request.getParameter("uname");
        String s2=request.getParameter("pass");
+       String s3 = request.getParameter("name");
+       String s4 = request.getParameter("rno");
        
            Class.forName("com.mysql.jdbc.Driver");
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/cll","root","root");
            Statement st=con.createStatement();
            try{
-            st.executeUpdate("insert into student_login_tabl(sid,pass) values('"+s1+"',PASSWORD('"+s2+"'))");
+            st.executeUpdate("insert into student_login_tabl(sid,pass,name,rno) values('"+s1+"',PASSWORD('"+s2+"'), '"+s3+"', '"+s4+"')");
            }catch (com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException e){
                response.sendRedirect("index.jsp?register=failed");
                return;

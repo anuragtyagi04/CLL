@@ -21,14 +21,14 @@
         %>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
         <%
-            if ((session.getAttribute("sid") == null) || (session.getAttribute("sid") == "")) {
+            if ((session.getAttribute("fid") == null) || (session.getAttribute("fid") == "")) {
         %>
         You are not logged in<br/>
         <a href="index.jsp">Please Login</a>
         <%} else {
         %>
         <p style="text-align: left;">
-            Welcome <%=session.getAttribute("sid")%>
+            Welcome <%=session.getAttribute("fid")%>
             <span style="float: right;">
                 <a href='logout.jsp'>Log out</a>
                 <%
