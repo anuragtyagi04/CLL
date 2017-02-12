@@ -67,8 +67,10 @@
                 <div class="hide">Module 4</div>
             </a>
             <!-- <div class="desc4">Some Text Here</div>-->
-            <a class="block" href="#">
-                <div class="hide">Module 5</div>
+            <a class="block" href="dictionary.jsp">
+                <div class="hide">
+                    Dictionary
+                </div>
             </a>
             <!--<div class="desc5">Some Text Here</div>-->
             <a class="block" href="mymarks.jsp">
