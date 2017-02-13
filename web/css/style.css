@@ -94,15 +94,15 @@ body {
     -moz-osx-font-smoothing: grayscale;      
 }
 
-[data-slides] {
-    background-image: url("images/image (4).JPG"); /* Default image. */
+/*[data-slides] {
+    background-image: url("images/image (4).jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
     background-size: cover;
     transition: background-image 1s linear;
     transition-delay: 0s;
-}
+}*/
 .test { 
     min-height: 100%;
     min-width: 1024px;

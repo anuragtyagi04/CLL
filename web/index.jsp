@@ -16,18 +16,18 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
     <body>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        
         <h1 class="display-1">Interactive Language Learning</h1>
-        <div class="test"
+        <!--<div class="test"
              data-slides='[
-             "css/images/image (4).JPG",
-             "css/images/image (1).JPG",
-             "css/images/image (2).JPG",
-             "css/images/image (3).JPG",
-             "css/images/image (5).JPG",
-             "css/images/image (6).JPG",
-             "css/images/image (7).JPG"             
-             ]'>
+             "css/images/image (1).jpg",
+             "css/images/image (2).jpg", 
+             "css/images/image (3).jpg", 
+             "css/images/image (4).jpg", 
+             "css/images/image (5).jpg",
+             "css/images/image (6).jpg",
+             "css/images/image (7).jpg",
+             ]'>-->
             <div class="login-page">
                 <%
                     String reg_alert="";
@@ -65,10 +65,11 @@
                     </form>
                 </div>
             </div>
-            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>            
+            <script src="js/bootstrap.min.js" type="text/javascript"></script>            
             <script src="js/index.js"></script>
-            <script src="js/slideshow.js"></script>
-            <script src="js/slideshow.min.js"></script>
+            <!--<script src="js/slideshow.js"></script>
+            <script src="js/slideshow.min.js"></script>-->
         </div>
     </body>
 </html>

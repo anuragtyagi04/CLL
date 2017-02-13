@@ -10,7 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Dictionary</title>
-        <link rel="stylesheet" href="css/dictionary.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/dictionary.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
     </head>
     <body>
         <h1 style="text-align: center;">Dictionary</h1>
@@ -23,19 +26,19 @@
         <p>Click search, Enter to submit</p>
         <br>
         <%
-           if(request.getParameter("dic-text")!=null){ 
+           if(request.getParameter("search")!=null){ 
         %>
-        <div align="center" style="margin-right:27%;"><h3><u>Search results:</u></h3></div>   
-        <%}%>
+        <div align="center" style="margin-right:27%;"><h3><u>Search results:</u></h3></div>        
         <div style="text-align:center; padding-left:30%;width:50%">
-            <div style="float:left; display: inline-block;"><b>Pronunciation:</b>&nbsp;</div>
+            <div style="float:left; display: inline-block;"><b>Pronunciation:</b>&nbsp;<i class="fa fa-volume-up" aria-hidden="true" onclick="play()"></i></div>
+            <audio id="audio" src="" ></audio>
             <div id="pronunciation" style="float:right;"></div><br>
             <div style="float:left; display: inline-block;"><b>Definition:</b>&nbsp;</div>
             <div id="meaning" style="float:right;"></div><br>
             <div style="float:left; display: inline-block;"><b>Synonyms:</b>&nbsp;</div>
             <div id="synonyms" style="float:right;"></div><br>
         </div>
-        
+        <%}%>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="js/dictionary.js"></script>
         <%
@@ -56,6 +59,11 @@
         var ur3 = "http://api.wordnik.com:80/v4/word.json/";
         var syn = "<%=dic_text%>";
         var ur4 = "/relatedWords?useCanonical=false&relationshipTypes=synonym&limitPerRelationshipType=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+        
+        var ur5 = "http://api.wordnik.com:80/v4/word.json/";
+        var audio = "<%=dic_text%>";
+        var ur6 = "/audio?useCanonical=false&limit=1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+        
         function Get(yourUrl){
             var Httpreq = new XMLHttpRequest(); 
             Httpreq.open("GET",yourUrl,false);
@@ -66,17 +74,23 @@
         var json_obj = JSON.parse(Get(url1+word+url2));
         var pron = JSON.parse(Get(ur1+pro+ur2));
         var syno = JSON.parse(Get(ur3+syn+ur4));
+        var aud = JSON.parse(Get(ur5+audio+ur6));
         var payload = json_obj[0].text;
         var payload1 = pron[0].raw;
         var payload2 = syno[0].words;
         var payload2Join = payload2.join(", ");
+        var payload3 = aud[0].fileUrl;
         document.getElementById("meaning").textContent=payload;
         document.getElementById("pronunciation").textContent=payload1;
         document.getElementById("synonyms").textContent=payload2Join;
-        
+        document.getElementById("audio").src=payload3;
         //alert(payload2Join);
         //alert(json_obj[0].text);
-        //alert(pron[0].raw);        
+        //alert(pron[0].raw);      
+        function play(){
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
         </script>
     </body>
 </html>
