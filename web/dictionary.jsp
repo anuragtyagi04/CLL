@@ -16,7 +16,8 @@
         
     </head>
     <body>
-        <h1 style="text-align: center;">Dictionary</h1>
+        <div style="text-align:right; margin-right:20%;"><a href="studentmain.jsp"><i class="fa fa-home" aria-hidden="true">Home</i></a></div>
+        <h1 style="text-align: center;">Dictionary</h1>        
         <form method="get" action="">
             <input type="text" name="search" />
             <div class="after"></div>
@@ -39,6 +40,7 @@
             <div id="synonyms" style="float:right;"></div><br>
         </div>
         <%}%>
+        
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="js/dictionary.js"></script>
         <%
