@@ -12,8 +12,23 @@
         <title>Dictionary</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/dictionary.css">        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+        <style>
+            .card-box {
+                background: #fff;
+                border-radius: 2px;
+                box-shadow: 0 0 4px 0 rgba(0,0,0,.10);
+                clear: both;
+                float: none;
+                margin-bottom: 1.25em;
+                min-height: 5em;
+                overflow: hidden;
+                padding: 1.9375em 1.3125em;
+                position: relative;
+                width:50%;
+                margin-left: 25%;
+            }
+        </style>
     </head>
     <body>
         <div style="text-align:right; margin-right:20%;"><a href="studentmain.jsp"><i class="fa fa-home" aria-hidden="true">Home</i></a></div>
@@ -29,15 +44,17 @@
         <%
            if(request.getParameter("search")!=null){ 
         %>
-        <div align="center" style="margin-right:27%;"><h3><u>Search results:</u></h3></div>        
-        <div style="text-align:center; padding-left:30%;width:50%">
-            <div style="float:left; display: inline-block;"><b>Pronunciation:</b>&nbsp;<i class="fa fa-volume-up" aria-hidden="true" onclick="play()"></i></div>
+        <div class="card-box">       
+            <h2 style="margin:0;"><%=request.getParameter("search")%></h2>
+            <h5 style="display: inline-block; margin:0;">
+                <div id="pronunciation" style="">
+                </div>
+            </h5>
             <audio id="audio" src="" ></audio>
-            <div id="pronunciation" style="float:right;"></div><br>
-            <div style="float:left; display: inline-block;"><b>Definition:</b>&nbsp;</div>
-            <div id="meaning" style="float:right;"></div><br>
-            <div style="float:left; display: inline-block;"><b>Synonyms:</b>&nbsp;</div>
-            <div id="synonyms" style="float:right;"></div><br>
+            <i class="fa fa-volume-up" aria-hidden="true" onclick="play()"></i>        
+            <div id="meaning"></div>
+            <h3 style="margin-bottom:0;">Synonyms:</h3>
+            <div id="synonyms"></div>
         </div>
         <%}%>
         

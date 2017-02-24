@@ -15,7 +15,7 @@
         <%
             session.setAttribute("sid", null);
             session.invalidate();
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("register.jsp?logout=yes");
         %>
     </body>
 </html>
