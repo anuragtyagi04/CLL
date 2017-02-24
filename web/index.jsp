@@ -1,75 +1,96 @@
 <%-- 
-    Document   : index.jsp
-    Created on : Aug 8, 2016, 6:46:41 AM
+    Document   : index
+    Created on : 24 Feb, 2017, 9:03:35 PM
     Author     : Gurjot
 --%>
-<%@page import="java.io.File"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<%@page import="java.awt.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%Class.forName("java.sql.DriverManager");%>
 <html>
     <head>
+        <%
+            if (session.getAttribute("sid") != null) {
+                response.sendRedirect("studentmain.jsp");
+            }
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login | Interactive Language Learning</title>
-        <link rel="stylesheet" href="css/mainmenu.css">
-        <link rel="stylesheet" href="css/style.css">        
+        <title>Interactive Language Learning</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            .footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                /* Set the fixed height of the footer here */
+                height: 30px;
+                background-color: #f5f5f5;
+            }
+        </style>
     </head>
-    <body>
-        
-        <h1 class="display-1">Interactive Language Learning</h1>
-        <!--<div class="test"
-             data-slides='[
-             "css/images/image (1).jpg",
-             "css/images/image (2).jpg", 
-             "css/images/image (3).jpg", 
-             "css/images/image (4).jpg", 
-             "css/images/image (5).jpg",
-             "css/images/image (6).jpg",
-             "css/images/image (7).jpg",
-             ]'>-->
-            <div class="login-page">
-                <%
-                    String reg_alert="";
-                    if(request.getParameter("register")!=null){
-                    reg_alert=(String) request.getParameter("register");
-                    if(reg_alert.equals("failed")){
-                %>
-                <div class="alert alert-danger">User registration failed. User name already exists.</div>
-                <%
-                    }else if(reg_alert.equals("success")){
-                %>
-                <div class="alert alert-success">User successfully registered. Please login to continue.</div>
-                <%
-                    }
-                    }
-                %>
-                
-                <div class="form">
-                    <form class="register-form"  action="studentregister.jsp">
-                        <span style="text-align: left;"><h5>Register:</h5></span>
-                        <input type="text" placeholder="Name" name="name"/>
-                        <input type="text" placeholder="Roll number" name="rno"/>
-                        <input type="text" placeholder="Username" name="uname"/>
-                        <input type="password" placeholder="Password" name="pass"/>                    
-                        <button>create</button>
-                        <p class="message">Already registered? <a href="#">Sign In</a></p>
-                    </form>
-                    <form class="login-form"  action="login.jsp">
-                        <span style="text-align: left;"><h5>Login:</h5></span>
-                        <input type="text" placeholder="Username" name="uname"/>
-                        <input type="password" placeholder="Password" name="pass"/>
-                        <button>Login</button>
-                        <p class="message">Not registered? <a href="#">Create an account</a></p>
-                        <p class="message">Login as Faculty?<a href="flogin.jsp">Click here</a></p>
-                    </form>
-                </div>
+    <body>        
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.jsp">Interactive Language Learning</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" action="login.jsp">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Username" name="uname"/>
+                    <input class="form-control mr-sm-2" type="password" placeholder="Password" name="pass"/>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+                </form>
+                &nbsp;
+                <a href="register.jsp" target="_BLANK"><button class="btn btn-outline-success my-2 my-sm-0">Register</button></a>
             </div>
-            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>            
-            <script src="js/bootstrap.min.js" type="text/javascript"></script>            
-            <script src="js/index.js"></script>
-            <!--<script src="js/slideshow.js"></script>
-            <script src="js/slideshow.min.js"></script>-->
+        </nav>
+        <div class="container" style="">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="pics/image (1).JPG" style="width:100%; height:1%;" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="pics/image (2).JPG" style="width:100%; height:1%;" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="pics/image (3).JPG" style="width:100%; height:1%;" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
+        <footer class="footer">
+            <p align="center" class="text-muted">The Northcap University</p>
+        </footer>
+
+        <script src="js/jquery-3.1.1.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>

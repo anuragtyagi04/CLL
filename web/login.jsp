@@ -28,16 +28,15 @@
                 session.setAttribute("name", rs.getString(4));
                 response.sendRedirect("studentmain.jsp");
             } else {
+                response.sendRedirect("register.jsp?login=failed");
+               return;
+            }
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+            }
+
+            con.close();
+
         %>
-    <center><h1><a href="index.jsp">TRY AGAIN</a></h1></center>
-                <%
-                    }
-                    if (session.getAttribute("sid") == null) {
-                        response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
-                    }
-
-                    con.close();
-
-                %>
 </body>
 </html>

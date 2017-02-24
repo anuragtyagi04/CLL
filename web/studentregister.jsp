@@ -25,12 +25,12 @@
            try{
             st.executeUpdate("insert into student_login_tabl(sid,pass,name,rno) values('"+s1+"',PASSWORD('"+s2+"'), '"+s3+"', '"+s4+"')");
            }catch (com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException e){
-               response.sendRedirect("index.jsp?register=failed");
+               response.sendRedirect("register.jsp?register=failed");
                return;
                //throw new Exception("Username already exists");
            }
            st.executeUpdate("insert into marks(sid,marks) values ('"+s1+"',0)");
-           response.sendRedirect("index.jsp?register=success");
+           response.sendRedirect("register.jsp?register=success");
            con.close();
        
        %>

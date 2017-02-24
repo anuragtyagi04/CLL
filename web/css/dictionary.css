@@ -10,7 +10,7 @@ and open the template in the editor.
 html {
 background-color: #ccffcc;
 font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
-font-size:150%;
+//font-size:100%;
 }
 p {
 text-align: center;
