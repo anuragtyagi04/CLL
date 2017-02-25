@@ -28,6 +28,9 @@
                 width:50%;
                 margin-left: 25%;
             }
+            .text-muted {
+                color: #636c72 !important;
+            }
         </style>
     </head>
     <body>
@@ -51,8 +54,14 @@
                 </div>
             </h5>
             <audio id="audio" src="" ></audio>
-            <i class="fa fa-volume-up" aria-hidden="true" onclick="play()"></i>        
+            <i class="fa fa-volume-up" aria-hidden="true" onclick="play()" title="Listen"></i>        
             <div id="meaning"></div>
+            <div class="text-muted" style="display:inline-block;">
+                <i>                    
+                    <div id="sentence">
+                    </div>                    
+                </i>
+            </div>
             <h3 style="margin-bottom:0;">Synonyms:</h3>
             <div id="synonyms"></div>
         </div>
@@ -83,6 +92,11 @@
         var audio = "<%=dic_text%>";
         var ur6 = "/audio?useCanonical=false&limit=1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
         
+        var ur7 = "http://api.wordnik.com:80/v4/word.json/";
+        var sen = "<%=dic_text%>";
+        var ur8 = "/topExample?useCanonical=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+        
+        
         function Get(yourUrl){
             var Httpreq = new XMLHttpRequest(); 
             Httpreq.open("GET",yourUrl,false);
@@ -99,10 +113,14 @@
         var payload2 = syno[0].words;
         var payload2Join = payload2.join(", ");
         var payload3 = aud[0].fileUrl;
+        
+        var sentence = JSON.parse(Get(ur7+sen+ur8));
+        var payload4 = sentence.text;
         document.getElementById("meaning").textContent=payload;
         document.getElementById("pronunciation").textContent=payload1;
         document.getElementById("synonyms").textContent=payload2Join;
         document.getElementById("audio").src=payload3;
+        document.getElementById("sentence").textContent="'"+payload4+"'";
         //alert(payload2Join);
         //alert(json_obj[0].text);
         //alert(pron[0].raw);      
