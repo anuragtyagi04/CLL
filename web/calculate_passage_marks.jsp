@@ -20,6 +20,9 @@
     </head>
     <body>
         <%
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+            }
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cll", "root", "root");
             Statement st = con.createStatement();

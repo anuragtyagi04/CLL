@@ -34,6 +34,11 @@
         </style>
     </head>
     <body>
+        <%
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+            }
+        %>
         <div style="text-align:right; margin-right:20%;"><a href="studentmain.jsp"><i class="fa fa-home" aria-hidden="true">Home</i></a></div>
         <h1 style="text-align: center;">Dictionary</h1>        
         <form method="get" action="">

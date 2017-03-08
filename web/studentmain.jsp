@@ -1,83 +1,139 @@
 <%-- 
-    Document   : student
-    Created on : Aug 15, 2016, 1:16:10 PM
-    Author     : Gurjot
+    Document   : studentmain.jsp
+    Created on : 26 Feb, 2017, 9:24:59 PM
+    Author     : Lovlesh
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.Base64"%>
+<%@page import="java.sql.*" %>
+<%@page import="java.io.*" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Main Menu</title>
-        <link rel="stylesheet" href="css/mainmenu.css">
+        <title>Dashboard | Interactive Language Learning</title>
+        <link type="text/css" rel="stylesheet" href="css/cards.css" />        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     </head>
     <body>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>        
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/mainmenu.js"></script>
         <%
-            response.addHeader("Cache-Control", "no-cache,no-store,private,must-revalidate,max-stale=0,post-check=0,pre-check=0");
-            response.addHeader("Pragma", "no-cache");
-            response.addDateHeader("Expires", 0);
-            //int k = (int)session.getAttribute("count");
-            //System.out.println(k);  
-
-            if ((session.getAttribute("sid") == null) || (session.getAttribute("sid") == "")) {
-        %>
-        You are not logged in<br/>
-        <a href="index.jsp">Please Login</a>
-        <%
-        } else {
-        %>
-        <p style="text-align: left;">Welcome <%=session.getAttribute("name")%><span style="float: right;"><a href='logout.jsp'>Log out</a></span></p>          
-        <%
-            }
             if (session.getAttribute("sid") == null) {
                 response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
             }
+            response.addHeader("Cache-Control", "no-cache,no-store,private,must-revalidate,max-stale=0,post-check=0,pre-check=0");
+            response.addHeader("Pragma", "no-cache");
+            response.addDateHeader("Expires", 0);
+            
+            String sid = (String)session.getAttribute("sid");
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/cll", "root", "root");
+            Statement st = con.createStatement();
+            
+            ResultSet rs = st.executeQuery("select * from student_login_tabl where sid='" + sid + "'");
+            rs.next();
+            //rs.getString(5);
         %>
-        <div style="font-family:'Hoefler Text',Georgia,'Times New Roman',serif;font-weight: normal;font-size: 1.75em;letter-spacing: .2em;line-height: 1.1em; margin:0px; text-align: center; text-transform: uppercase;">Interactive Language Learning</div>
-        
-        <div class="container menu">
-            <!--<div class="yel">-->
-            <a class="block" href="reading.jsp?passage=1">Reading
-                <div class="hide"></div>
-            </a>
-            <!--<div class="desc1">
-            In this unit we will look at:
-            <li>making your reading more efficient by defining your purpose for reading.</li>
-            <li>finding information quickly by scanning.</li>
-            <li>topic sentences and how they can help you understand a text.</li>
-            <li>identifying the main arguments in a text.</li>
-            <li>summarising the information you find.</li> 
-            </div>-->
-            <!--</div>-->
-            <!--<div class="gre">-->
-            <a class="block" href="listen.html">
-                <div class="hide">Listening</div>
-            </a>
-            <!--<div class="desc2">Some Text Here</div>-->
-            <!--</div>-->
-            <a class="block" href="#">
-                <div class="hide">Module 3</div>
-            </a>
-            <!--<div class="desc3">Some Text Here</div>-->
-            <a class="block" href="#">
-                <div class="hide">Module 4</div>
-            </a>
-            <!-- <div class="desc4">Some Text Here</div>-->
-            <a class="block" href="dictionary.jsp">
-                <div class="hide">
-                    Dictionary
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-fixed-top">            
+            <a class="navbar-brand" href="index.jsp">Interactive Language Learning</a>
+            <div class="pull-right" style="margin-left: 65%;">
+                <ul class="nav navbar-nav" style="width: 100%;">
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href=# id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%=session.getAttribute("name")%>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="studentdashboard.jsp">Dashboard</a>
+                            <a class="dropdown-item" href="logout.jsp"><i class="fa fa-sign-out"></i> Sign-out</a>
+                        </div>
+                    </li>
+                    <li class="profile-image">                        
+                        <a class="nav-link" href="#">
+                            <%if((rs.getBlob(6))==null){%>
+                                <img class="profile-image" src="pics/avatar.png">
+                            <%
+                                }else{
+                            %>
+                                <img src="image.jsp" width="50" height="50" />
+                            <%
+                                }
+                            %>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+	</nav>
+        <div class="container">
+            <div class="row">
+                <div style="margin-left: 20px;">
+                    <div class="card" style="">
+                        <a href="reading.jsp?passage=1" class="link">
+                                <img src="pics/reading.png" alt="" style="width: 20rem; height: 15rem;">
+                        </a>
+                        <div class="card-block">
+                            <h4 class="card-title" >Reading</h4>
+                        </div>
+                    </div>	
                 </div>
-            </a>
-            <!--<div class="desc5">Some Text Here</div>-->
-            <a class="block" href="mymarks.jsp">
-                <div class="hide">My marks</div>
-            </a>
-            <!--<div class="desc6">Some Text Here</div>-->
-        </div>        
-        <!--<script src="js/desc.js"></script>-->
+                <div style="margin-left: 20px;">
+                    <div class="card" style="">
+                        <a href="listen.html" class="link"> 
+                            <img src="pics/listen.jpg" alt="" style="width: 20rem; height: 15rem;">
+                        </a>
+                        <div class="card-block">
+                            <h4 class="card-title" >Listening</h4>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left: 20px;">
+                    <div class="card" style="">
+                        <a href=# class="link">
+                            <img src="pics/undefined.png" alt="" style="width: 20rem; height: 15rem;">
+                        </a>
+                        <div class="card-block">
+                            <h4 class="card-title" >Module 3</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div style="margin-left: 20px;">
+                    <div class="card" style="">
+                        <a href=# class="link">
+                            <img src="pics/undefined.png" alt="" style="width: 20rem; height: 15rem;">
+                        </a>
+                        <div class="card-block">
+                            <h4 class="card-title" >Module 4</h4>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left: 20px;">
+                    <div class="card" style="">
+                        <a href="dictionary.jsp" class="link">
+                            <img src="pics/dictionary.png" alt="" style="width: 20rem; height: 15rem;">
+                        </a>
+                        <div class="card-block">
+                            <h4 class="card-title" >Dictionary</h4>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left: 20px;">
+                    <div class="card" style="">
+                        <a href="mymarks.jsp" class="link">
+                            <img src="pics/marks.jpg" alt="" style="width: 20rem; height: 15rem;">
+                        </a>
+                        <div class="card-block">
+                            <h4 class="card-title">My Marks</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/navbar.js" type="text/javascript"></script>
+        <script src="js/jquery-3.1.1.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     </body>
 </html>
