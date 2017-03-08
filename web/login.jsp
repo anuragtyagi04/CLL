@@ -15,6 +15,9 @@
     <body>
 
         <%
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+            }
             String s1 = request.getParameter("uname");
             String s2 = request.getParameter("pass");
             int k=0;

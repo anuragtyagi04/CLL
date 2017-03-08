@@ -14,10 +14,13 @@
     </head>
     <body>
        <%
-       String s1=request.getParameter("uname");
-       String s2=request.getParameter("pass");
-       String s3 = request.getParameter("name");
-       String s4 = request.getParameter("rno");
+            if (session.getAttribute("sid") == null) {
+                response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+            }
+            String s1=request.getParameter("uname");
+            String s2=request.getParameter("pass");
+            String s3 = request.getParameter("name");
+            String s4 = request.getParameter("rno");
        
            Class.forName("com.mysql.jdbc.Driver");
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/cll","root","root");

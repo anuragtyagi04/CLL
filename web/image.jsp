@@ -8,6 +8,9 @@
 
 
 <% 
+    if (session.getAttribute("sid") == null) {
+        response.sendRedirect("index.jsp"); // GO TO LOGIN PAGE
+    }
     String sid = (String)session.getAttribute("sid");
     Blob image = null;
     Connection con = null;

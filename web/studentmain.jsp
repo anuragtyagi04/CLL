@@ -1,5 +1,5 @@
 <%-- 
-    Document   : dictionary
+    Document   : studentmain.jsp
     Created on : 26 Feb, 2017, 9:24:59 PM
     Author     : Lovlesh
 --%>
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dashboard</title>
+        <title>Dashboard | Interactive Language Learning</title>
         <link type="text/css" rel="stylesheet" href="css/cards.css" />        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +44,7 @@
                             <%=session.getAttribute("name")%>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item disabled" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="studentdashboard.jsp">Dashboard</a>
                             <a class="dropdown-item" href="logout.jsp"><i class="fa fa-sign-out"></i> Sign-out</a>
                         </div>
                     </li>
